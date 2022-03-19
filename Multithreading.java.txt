@@ -1,0 +1,42 @@
+import java.util.*;
+import java.lang.*;
+
+
+
+ class MultiThreading extends Thread{
+        
+        public void run(){
+            try{
+                System.out.println("My name is " + Thread.currentThread().getName() );
+            }
+            catch(Exception e){
+                System.out.println("Exception is caught");
+            }
+        }
+    }
+
+
+
+public class Main
+{
+    
+	public static void main(String[] args) {
+	    
+	    int n = 5;
+	    for(int i =0 ; i<n ;i++){
+	        
+	        MultiThreading obj = new MultiThreading();
+	        obj.start();
+	    }
+	    
+	
+	}
+}
+
+
+Output
+
+My name is Thread-3
+My name is Thread-2
+My name is Thread-4
+My name is Thread-0
