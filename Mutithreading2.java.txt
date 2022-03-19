@@ -39,3 +39,9 @@ public class Main
 	
 	}
 }
+
+Output
+My name is Thread-4
+My name is Thread-0
+My name is Thread-3
+My name is Thread-2
