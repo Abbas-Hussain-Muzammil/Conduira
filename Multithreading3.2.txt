@@ -1,0 +1,64 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.lang.*;
+
+class Multithreading implements Runnable{
+    
+   String message;
+   
+   Multithreading(String greeting){
+       
+       message = greeting;
+   }
+    
+    public void run(){
+        try{
+            
+            System.out.println(message + " from " + Thread.currentThread().getName());
+            
+        }
+        catch(Exception e){
+            System.out.println("Caught Exception");
+        }
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+	 
+       Thread t1 = new Thread(new Multithreading("Hello India"));
+       Thread t2 = new Thread(new Multithreading("Hello India"));
+       Thread t3 = new Thread(new Multithreading("Hello India"));
+       Thread t4 = new Thread(new Multithreading("Hello India"));
+       Thread t5 = new Thread(new Multithreading("Hello India"));
+	 
+	 
+	 t1.start();
+	 t2.start();
+	 t3.start();
+	 t4.start();
+	 t5.start();
+	 
+	 
+		
+		
+		
+	}
+}
+
+
+Output 
+
+Hello India from Thread-1
+Hello India from Thread-0
+Hello India from Thread-4
+Hello India from Thread-3
+Hello India from Thread-2
+
