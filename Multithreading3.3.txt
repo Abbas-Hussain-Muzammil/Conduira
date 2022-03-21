@@ -1,0 +1,87 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+// package com.howtodoinjava.threads;
+ 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+
+ 
+ class Task implements Runnable {
+    private String name;
+ 
+    public Task(String name) {
+        this.name = name;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public void run() {
+        try {
+            Long duration = (long) (Math.random() * 10);
+            System.out.println("Executing : " + name);
+            TimeUnit.SECONDS.sleep(duration);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+
+     ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
+     
+     for(int i = 1 ; i<=10 ; i++){
+         
+         Task task = new Task("Task " + i);
+         System.out.println(task.getName());
+         
+         executor.execute(task);
+     }
+     executor.shutdown();
+
+
+
+	}
+}
+
+
+/*************************************************
+
+output
+
+
+Task 1
+Task 2
+Task 3
+Task 4
+Task 5
+Task 6
+Task 7
+Task 8
+Task 9
+Task 10
+Executing : Task 2
+Executing : Task 5
+Executing : Task 1
+Executing : Task 3
+Executing : Task 4
+Executing : Task 6
+Executing : Task 7
+Executing : Task 8
+Executing : Task 9
+Executing : Task 10
+
+
+********************************************************************/
