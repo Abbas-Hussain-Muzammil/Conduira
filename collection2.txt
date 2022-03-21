@@ -1,0 +1,50 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+       ArrayList<Integer> list = new ArrayList<Integer>();
+        
+        
+        list.add(10);
+        list.add(15);
+        list.add(12);
+        list.add(1);
+        list.add(2);
+        
+        
+        System.out.println(list);
+        
+        list.add(1,13);
+        System.out.println(list);
+        
+        // Iterating ArrayList
+        for(int i: list)
+        System.out.println(i);
+        
+		
+		
+		
+	}
+}
+/***************
+Output
+
+[10, 15, 12, 1, 2]
+[10, 13, 15, 12, 1, 2]
+10
+13
+15
+12
+1
+2
+**************/
