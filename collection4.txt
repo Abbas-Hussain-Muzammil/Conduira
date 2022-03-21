@@ -1,0 +1,53 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+
+     PriorityQueue<Integer> queue = new PriorityQueue<Integer>();
+     
+     for(int i = 10 ; i>4 ; i--){
+         queue.add(i);
+     }
+     
+     System.out.println(queue.peek());
+     queue.poll();
+     System.out.println("After removing front element");
+     
+     System.out.println(queue.peek());
+     queue.remove(10);
+     System.out.println(queue);
+     queue.remove(6);
+     System.out.println(queue);
+     
+     
+     
+ 
+         
+         
+
+	
+	}
+}
+/*********************
+
+
+Output
+
+5
+After removing front element
+6
+[6, 7, 9, 10, 8]
+[6, 7, 9, 8] //Removed 10
+[7, 8, 9] //Removed 6
+
+
+*******************/
+
